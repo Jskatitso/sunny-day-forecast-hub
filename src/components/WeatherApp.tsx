@@ -12,7 +12,7 @@ const WeatherApp: React.FC = () => {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [location, setLocation] = useState<string>("New York");
+  const [location, setLocation] = useState<string>("Accra");
   const { toast } = useToast();
 
   useEffect(() => {
@@ -58,7 +58,7 @@ const WeatherApp: React.FC = () => {
       <div className="container mx-auto px-4 py-8">
         <header className="mb-8 flex flex-col md:flex-row justify-between items-center">
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 md:mb-0">
-            Weather Forecast
+            Ghana Weather Forecast
           </h1>
           <LocationSearch onSelectLocation={handleLocationSelect} className="w-full md:w-auto" />
         </header>
@@ -97,7 +97,7 @@ const WeatherApp: React.FC = () => {
         </div>
 
         <footer className="mt-12 text-center text-white/70 text-sm">
-          <p>© {new Date().getFullYear()} Weather Forecast App</p>
+          <p>© {new Date().getFullYear()} Ghana Weather Forecast App</p>
           <p className="mt-1">Data provided for demonstration purposes</p>
         </footer>
       </div>
