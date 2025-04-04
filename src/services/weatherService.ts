@@ -34,16 +34,22 @@ const getMockGhanaLocations = (query: string): SearchResult[] => {
   if (!query || query.trim() === "") return [];
   
   const ghanaianCities = [
-    { id: 1, name: "Accra", region: "Greater Accra", country: "Ghana", lat: 5.6037, lon: -0.1870 },
-    { id: 2, name: "Kumasi", region: "Ashanti", country: "Ghana", lat: 6.6885, lon: -1.6244 },
-    { id: 3, name: "Tamale", region: "Northern", country: "Ghana", lat: 9.4075, lon: -0.8533 },
-    { id: 4, name: "Takoradi", region: "Western", country: "Ghana", lat: 4.8845, lon: -1.7554 },
-    { id: 5, name: "Cape Coast", region: "Central", country: "Ghana", lat: 5.1053, lon: -1.2466 },
-    { id: 6, name: "Sekondi", region: "Western", country: "Ghana", lat: 4.9349, lon: -1.7041 },
-    { id: 7, name: "Koforidua", region: "Eastern", country: "Ghana", lat: 6.0945, lon: -0.2579 },
-    { id: 8, name: "Sunyani", region: "Bono", country: "Ghana", lat: 7.3349, lon: -2.3268 },
-    { id: 9, name: "Ho", region: "Volta", country: "Ghana", lat: 6.6015, lon: 0.4713 },
-    { id: 10, name: "Techiman", region: "Bono East", country: "Ghana", lat: 7.5908, lon: -1.9427 },
+  { id: 1, name: "Accra", region: "Greater Accra", country: "Ghana", lat: 5.6037, lon: -0.1870 },
+  { id: 2, name: "Kumasi", region: "Ashanti", country: "Ghana", lat: 6.6885, lon: -1.6244 },
+  { id: 3, name: "Tamale", region: "Northern", country: "Ghana", lat: 9.4075, lon: -0.8533 },
+  { id: 4, name: "Techiman", region: "Bono East", country: "Ghana", lat: 7.5908, lon: -1.9427 },
+  { id: 5, name: "Cape Coast", region: "Central", country: "Ghana", lat: 5.1053, lon: -1.2466 },
+  { id: 6, name: "Sekondi-Takoradi", region: "Western", country: "Ghana", lat: 4.9349, lon: -1.7041 },
+  { id: 7, name: "Koforidua", region: "Eastern", country: "Ghana", lat: 6.0945, lon: -0.2579 },
+  { id: 8, name: "Sunyani", region: "Bono", country: "Ghana", lat: 7.3349, lon: -2.3268 },
+  { id: 9, name: "Ho", region: "Volta", country: "Ghana", lat: 6.6015, lon: 0.4713 },
+  { id: 10, name: "Nalerigu", region: "North East", country: "Ghana", lat: 10.5167, lon: -0.3667 },
+  { id: 11, name: "Goaso", region: "Ahafo", country: "Ghana", lat: 6.8066, lon: -2.5176 },
+  { id: 12, name: "Dambai", region: "Oti", country: "Ghana", lat: 7.9667, lon: 0.1667 },
+  { id: 13, name: "Damongo", region: "Savannah", country: "Ghana", lat: 9.0833, lon: -1.8167 },
+  { id: 14, name: "Wiawso", region: "Western North", country: "Ghana", lat: 6.2167, lon: -2.4833 },
+  { id: 15, name: "Bolgatanga", region: "Upper East", country: "Ghana", lat: 10.7856, lon: -0.8514 },
+  { id: 16, name: "Wa", region: "Upper West", country: "Ghana", lat: 10.0667, lon: -2.5000 }
   ];
   
   return ghanaianCities.filter(city => 
@@ -162,16 +168,22 @@ const getMockWeatherData = (location: string): WeatherData => {
 // Helper function to get region for a Ghanaian city
 function getRegionForCity(cityName: string): string {
   const cityRegions: {[key: string]: string} = {
-    "Accra": "Greater Accra",
-    "Kumasi": "Ashanti",
-    "Tamale": "Northern",
-    "Takoradi": "Western",
-    "Cape Coast": "Central",
-    "Sekondi": "Western",
-    "Koforidua": "Eastern",
-    "Sunyani": "Bono",
-    "Ho": "Volta",
-    "Techiman": "Bono East"
+     "Accra": "Greater Accra",
+     "Kumasi": "Ashanti",
+     "Tamale": "Northern",
+     "Sekondi-Takoradi": "Western",
+     "Cape Coast": "Central",
+     "Koforidua": "Eastern",
+     "Sunyani": "Bono",
+     "Ho": "Volta",
+     "Techiman": "Bono East",
+     "Nalerigu": "North East",
+     "Goaso": "Ahafo",
+     "Dambai": "Oti",
+     "Damongo": "Savannah",
+     "Wiawso": "Western North",
+     "Bolgatanga": "Upper East",
+     "Wa": "Upper West"
   };
   
   return cityRegions[cityName] || "Greater Accra";
