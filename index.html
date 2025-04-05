@@ -1,26 +1,84 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather-hub</title>
-    <meta name="description" content="Lovable Generated Project" />
+    <title>Ghana Weather Forecast</title>
+    <meta name="description" content="Weather forecast for Ghana" />
     <meta name="author" content="Lovable" />
-
-    <meta property="og:title" content="Weather-hub👨‍🦯" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
-
-  <body>
-    <div id="root"></div>
+    <link rel="stylesheet" href="styles.css">
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Ghana Weather Forecast</h1>
+        <div class="search-container">
+          <input type="text" id="location-search" placeholder="Search for a city in Ghana...">
+          <button id="search-button">Search</button>
+        </div>
+      </header>
+
+      <main>
+        <div id="loading" class="loading">
+          <div class="spinner"></div>
+        </div>
+        
+        <div id="error" class="error-container hidden">
+          <p id="error-message">Could not load weather data. Please try again.</p>
+          <button id="retry-button">Try Again</button>
+        </div>
+
+        <section id="current-weather" class="weather-card hidden">
+          <div class="current-info">
+            <h2 id="location-name">Accra</h2>
+            <div class="current-temp">
+              <span id="current-temperature">30</span>°C
+            </div>
+            <div class="weather-details">
+              <p id="weather-condition">Sunny</p>
+              <p>Feels like <span id="feels-like">32</span>°C</p>
+            </div>
+          </div>
+          <div class="current-details">
+            <div class="detail-item">
+              <span class="detail-label">Humidity</span>
+              <span id="humidity">65%</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Wind</span>
+              <span id="wind-speed">12 km/h</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">UV Index</span>
+              <span id="uv-index">6</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="hourly-forecast" class="weather-card hidden">
+          <h3>Today's Forecast</h3>
+          <div class="hourly-container" id="hourly-container">
+            <!-- Hourly forecast items will be inserted here by JavaScript -->
+          </div>
+        </section>
+
+        <section id="daily-forecast" class="weather-card hidden">
+          <h3>5-Day Forecast</h3>
+          <div class="forecast-container" id="forecast-container">
+            <!-- Daily forecast items will be inserted here by JavaScript -->
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>© <span id="current-year"></span> Ghana Weather Forecast App</p>
+        <p>Data provided for demonstration purposes</p>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
   </body>
 </html>
