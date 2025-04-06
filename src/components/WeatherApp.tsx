@@ -97,7 +97,7 @@ const WeatherApp: React.FC = () => {
         </div>
 
         <footer className="mt-12 text-center text-white/70 text-sm">
-          <p>© {new Date().getFullYear()} Ghana Weather Forecast App</p>
+          <p>© {new Date().getFullYear()} Ghana Weather Forecast Site</p>
           <p className="mt-1">Data provided for demonstration purposes</p>
         </footer>
       </div>
